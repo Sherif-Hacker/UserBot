@@ -53,8 +53,8 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗛𝗲𝗹𝗽𝗲𝗿\
-        \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
+    text = f"**Sherif Userbot Helper**\
+        \n**Provided by** {mention}"
     buttons = [
         (Button.inline("ℹ️ Info", data="check"),),
         (
@@ -123,8 +123,8 @@ async def article_builder(event, method):
         query = "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁."
         buttons = [
             (
-                Button.url("Source code", "https://github.com/TgCatUB/catuserbot"),
-                Button.url("Deploy", "https://github.com/TgCatUB/nekopack"),
+                Button.url("Channel", "https://t.me/SherifUserbot"),
+                Button.url("Deploy", "https://github.com/Sherif-Sami/SherifUserbot"),
             )
         ]
 
@@ -141,7 +141,7 @@ async def article_builder(event, method):
         buttons = [
             (
                 Button.inline("Stats", data="stats"),
-                Button.url("Repo", "https://github.com/TgCatUB/catuserbot"),
+                Button.url("Repo", "https://github.com/Sherif-Sami/SherifUserbot"),
             )
         ]
         try:
