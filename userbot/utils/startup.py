@@ -69,9 +69,9 @@ async def startupmessage():
         if BOTLOG:
             Config.CATUBLOGO = await catub.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://graph.org/file/4e3ba8e8f7e535d5a2abe.jpg",
-                caption="**Your CatUserbot has been started successfully.**",
-                buttons=[(Button.url("Support", "https://t.me/catuserbot"),)],
+                "https://graph.org/file/c9972719f78349a78da21.jpg",
+                caption="**Your Sherif Userbot has been started successfully.**",
+                buttons=[(Button.url("Support", "https://t.me/SherifUserbot"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -218,9 +218,9 @@ async def verifyLoggerGroup():
                 + str(e)
             )
     else:
-        descript = "Don't delete this group or change to group(If you change group all your previous snips, welcome will be lost.)"
+        descript = "⚠️ Don't delete this group or change to public group (If you Delete group all your previous snips, welcome will be lost.) Userbot Powered by Sherif Sami."
         _, groupid = await create_supergroup(
-            "CatUserbot BotLog Group", catub, Config.TG_BOT_USERNAME, descript
+            "Sherif Userbot Log", catub, Config.TG_BOT_USERNAME, descript
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print(
