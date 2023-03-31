@@ -257,7 +257,7 @@ async def upstream(event):
     # Special case for deploy
     if changelog == "" and not force_update:
         await event.edit(
-            "\n`CATUSERBOT is`  **up-to-date**  `with`  "
+            "\n`SherifUserbot is`  **up-to-date**  `with`  "
             f"**{UPSTREAM_REPO_BRANCH}**\n"
         )
         return repo.__del__()
@@ -265,7 +265,7 @@ async def upstream(event):
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
         return await event.respond(
-            f"do `{cmdhd}update deploy` to update the catuserbot"
+            f"do `{cmdhd}update deploy` to update the SherifUserbot"
         )
 
     if force_update:
@@ -293,7 +293,7 @@ async def upstream(event):
             f"I guess you are on selfhost. For self host you need to use `{cmdhd}update now`",
         )
     event = await edit_or_reply(event, "`Pulling the nekopack repo wait a sec ....`")
-    off_repo = "https://github.com/TgCatUB/nekopack"
+    off_repo = "https://github.com/Sherif-Sami/SherifUserbot"
     os.chdir("/app")
     try:
         txt = (
