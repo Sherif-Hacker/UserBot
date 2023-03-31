@@ -14,8 +14,8 @@ from .sql_helper.globals import addgvar, delgvar, gvarstatus
 
 __version__ = "3.2.1"
 __license__ = "GNU Affero General Public License v3.0"
-__author__ = "CatUserBot <https://github.com/TgCatUB/catuserbot>"
-__copyright__ = f"CatUserBot Copyright (C) 2020 - 2021  {__author__}"
+__author__ = "SherifUserBot <https://github.com/Sherif-Hacker/userbot>"
+__copyright__ = f"SherifUserBot Copyright (C) 2020 - 2021  {__author__}"
 
 catub.version = __version__
 catub.tgbot.version = __version__
