@@ -40,7 +40,7 @@ async def startup_process():
     print("Yay your userbot is officially working.!!!")
     print(
         f"Congratulation, now type {cmdhr}alive to see message if catub is live\
-        \nIf you need assistance, head to https://t.me/catuserbot_support"
+        \nIf you need assistance, head to https://t.me/Sherif_Sami"
     )
     print("============================================================")
     await verifyLoggerGroup()
