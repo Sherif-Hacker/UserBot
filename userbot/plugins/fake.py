@@ -39,6 +39,7 @@ Sceapped by {}
 async def scrape(m):
     txt = ""
     skp = 0
+    lol = m.pattern_match.group(1)
     spl = m.text.split(" ")
     e3 = await edit_or_reply(m, "Processing")
     if not spl:
