@@ -55,7 +55,7 @@ async def scrape(m):
     _get = lambda m: getattr(m, "text", 0) or getattr(m, "caption", 0)
     _getcc = lambda m: list(findall("\d{16}\|\d{2,4}\|\d{2,4}\|\d{2,4}", m)))
 
-    async for x in evsnt.client.get_chat_history(_chat, limit=limit):
+    async for x in m.client.get_chat_history(_chat, limit=limit):
         if not (text := _get(x)):
             skp += 1
             continue
