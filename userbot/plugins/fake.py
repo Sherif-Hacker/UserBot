@@ -72,7 +72,7 @@ async def scrape(m):
         str(skp),
         str(txt.count("\n")),
     )
-    file = f"x{limit} CC Scrapped by CatUb.txt"
+    file = f"x{limit} CC Scrapped by SherifUB.txt"
     with open(file, "w+") as f:
         f.write(txt)
     y = await m.client.send_document(
