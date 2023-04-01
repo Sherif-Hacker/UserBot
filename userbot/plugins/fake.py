@@ -22,7 +22,6 @@ _SCRTXT = """
 **Skipped ->** {}
 **Cc Found ->** {}
 
-Sceapped by {}
 """
 
 
@@ -72,7 +71,6 @@ async def scrape(m):
         str(limit),
         str(skp),
         str(txt.count("\n")),
-        m.from_user.mention,
     )
     file = f"x{limit} CC Scrapped by CatUb.txt"
     with open(file, "w+") as f:
