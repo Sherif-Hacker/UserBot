@@ -1,6 +1,7 @@
 import asyncio
 from random import choice, randint
-
+from os import remove
+from re import findall
 from telethon.errors import BadRequestError
 from telethon.tl.functions.channels import EditAdminRequest
 from telethon.tl.types import ChatAdminRights
@@ -12,6 +13,74 @@ from ..helpers.utils import get_user_from_event
 from . import ALIVE_NAME
 
 plugin_category = "fun"
+
+_SCRTXT = """
+**✅ CC Scrapped Successfully!**
+
+**Source ->** {}
+**Amount ->** {}
+**Skipped ->** {}
+**Cc Found ->** {}
+
+
+
+@catub.cat_cmd(
+    pattern="scrape(?:\s|$)([\s\S]*)",
+    command=("scrape", plugin_category),
+    info={
+        "header": "Used to scrape cc",
+        "usage": [
+            "{tr}scrape <userid/username/reply>",
+        ],
+    },
+)
+async def scrape(m):
+    txt = ""
+    skp = 0
+    spl = m.text.split(" ")
+    e3 = await edit_or_reply(m, "Processing")
+    if not spl:
+        return await e3.edit("full cmd de vai.. 😔")
+    elif len(spl) == 2:
+        _chat = spl[1].strip()
+        limit = 100
+    elif len(spl) > 2:
+        _chat = spl[1].strip()
+        try:
+            limit = int(spl[2].strip())
+        except ValueError:
+            return await e3.edit("No. of card to Scrape must be Integer!")
+
+    await e3.edit(f"`Scrapping from {_chat}. \nHold your Horses...`")
+    _get = lambda m: getattr(m, "text", 0) or getattr(m, "caption", 0)
+    _getcc = lambda m: list(findall("\d{16}\|\d{2,4}\|\d{2,4}\|\d{2,4}", m)))
+
+    async for x in evsnt.client.get_chat_history(_chat, limit=limit):
+        if not (text := _get(x)):
+            skp += 1
+            continue
+        if not (cc := _getcc(text)):
+            skp += 1
+        else:
+            txt += "\n".join(cc) + "\n"
+
+    cap = _SCRTXT.format(
+        _chat,
+        str(limit),
+        str(skp),
+        str(txt.count("\n")),
+        m.from_user.mention,
+    )
+    file = f"x{limit} CC Scrapped by CatUb.txt"
+    with open(file, "w+") as f:
+        f.write(txt)
+    y = await m.client.send_document(
+        m.chat_id,
+        file,
+        caption=cap,
+    )
+    remove(file)
+    await e3.delete()
 
 
 @catub.cat_cmd(
