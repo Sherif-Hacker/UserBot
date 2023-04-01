@@ -22,6 +22,8 @@ _SCRTXT = """
 **Skipped ->** {}
 **Cc Found ->** {}
 
+Sceapped by {}
+"""
 
 
 @catub.cat_cmd(
