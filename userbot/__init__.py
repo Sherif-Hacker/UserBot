@@ -19,7 +19,7 @@ __copyright__ = f"SherifUserBot Copyright (C) 2020 - 2021  {__author__}"
 
 catub.version = __version__
 catub.tgbot.version = __version__
-LOGS = logging.getLogger("CatUserbot")
+LOGS = logging.getLogger("SherifUserbot")
 bot = catub
 
 StartTime = time.time()
