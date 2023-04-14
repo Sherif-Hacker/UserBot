@@ -117,14 +117,14 @@ async def article_builder(event, method):
         thumb = get_thumb("filemanager.jpg")
         media = "https://github.com/TgCatUB/CatUserbot-Resources/raw/master/Resources/Inline/filemanager.jpg"
     elif method == "deploy":
-        media = "https://github.com/TgCatUB/CatUserbot-Resources/raw/master/Resources/Inline/catlogo.png"
-        title = "𝘾𝙖𝙩𝙐𝙨𝙚𝙧𝙗𝙤𝙩"
-        description = "Deploy yourself."
-        query = "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁."
+        media = "https://graph.org/file/d47b8815dd3397dc9729d.jpg"
+        title = Sherif Userbot"
+        description = "Deploy yourself..."
+        query = "**Deploy your own Sherif Userbot.**"
         buttons = [
             (
-                Button.url("Channel", "https://t.me/SherifUserbot"),
                 Button.url("Deploy", "https://github.com/Sherif-Sami/SherifUserbot"),
+                Button.url("Update", "https://t.me/SherifUserbot"),
             )
         ]
 
